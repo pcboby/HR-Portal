@@ -29,4 +29,14 @@
 	        }
 	    });
 	})
+	.factory('DataSearch', function($resource) {
+	    return $resource($path_api + '/Data_search.json', null, {
+	        query: {
+	            method: 'GET'
+	        },
+	        get: {
+	            method: 'GET'
+	        }
+	    });
+	})
 })()
