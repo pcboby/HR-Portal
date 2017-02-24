@@ -1280,3 +1280,26 @@ Glyphicons </a> Halflings are normally not available for free, but their creator
     <ng-combo-select ng-model="dims1" ng-data="dimensions" placeholder="请选择" data-selected-text="条记录" data-all-buttons="true" data-options="dim.id as dim.name for dim in $data" />
     <ng-combo-select ng-model="dims2" ng-data="dimensions" placeholder="请选择" data-selected-text="条记录" data-all-buttons="true" data-options="dim.id as dim.name for dim in $data" />
 </div>
+<div class="clearfix"></div>
+<!--  -->
+<div class="note note-success">
+    <p>
+        ng-combo-search
+    </p>
+</div>
+<div class="clearfix"></div>
+    <ng-combo-search 
+        placeholder="请选择部门"
+        icon-class="glyphicon glyphicon-user"
+        icon-display="true"
+        btn-display="true"
+        btn-value="<i class='fa fa-search'></i>"
+        ng-data="dataSearch"
+        ng-model="searchModel"
+        data-options="data.code as data.name for data in $data"
+        modal-title="请选择部门"
+        modal-backdrop="static"
+        modal-template-url="tpls/input.combosearch.modaltpl.html">
+    </ng-combo-search>
+    <br>
+    <p>{{searchModel}}</p>
