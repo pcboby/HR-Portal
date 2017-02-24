@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 	app
-	.controller('Search', function ($scope,$stateParams,NgTableParams,SimpleList) {
+	.controller('Search', function ($scope,$element,$state, $stateParams, NgTableParams, RecordList) {
 
 		// console.log('Search $stateParams',$stateParams)
 		$scope.data = [];
@@ -12,19 +12,27 @@
 			database:0
 		}
 
-		$scope.tableParams=new NgTableParams({
-			count: 5
-		}, {
-			counts: [5, 10, 20],
-			dataset: $scope.data
-		});
+		$scope._view=_view;
 
-		SimpleList.query($stateParams,function(res){
-			// console.log('res',res)
-			$scope.tableParams.settings().dataset=res.rows;
-			$scope.statistics=res.statistics;
-			$scope.tableParams.reload();
-		})
+		$scope.tableParams = new NgTableParams({
+            count: 5
+        }, {
+            counts: [5, 10, 20],
+            // dataset: $scope.data
+            getData: function(params) {
+                return RecordList.get(params.url()).$promise.then(function(res) {
+                    params.total(res.total); // recal. page nav controls
+                    $scope.data = res.rows
+                    return $scope.data;
+                });
+            }
+        });
+
+        function _view(id){
+        	console.log('_view');
+        	$state.go('web.SearchView',{id:id});
+        }
+
 
 	})
 })()
