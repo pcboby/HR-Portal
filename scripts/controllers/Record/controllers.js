@@ -71,6 +71,8 @@
                 }
             });
 
+            RecordList.get(function(res){console.log(res)})
+
             function _search(){
             	console.log('_search');
             }
