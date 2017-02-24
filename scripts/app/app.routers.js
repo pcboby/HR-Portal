@@ -123,6 +123,32 @@
 		            }]
 		        }
 		    })
+		    // []
+		    .state('web.SearchView', {
+		        url: '/Search/View.html?id',
+		        views: {
+		        	'content':{
+		            	templateUrl: $path_root + 'views/Search/detail.html',
+		            	controller:'SearchView'
+		        	}
+		        },
+		        data: {
+		            pageTitle: '用户信息',
+		            pageTitleSub:'查看',
+		            parentUrl:'#/web/Search.html'
+		        },
+		        resolve: {
+		            deps: ['$ocLazyLoad', function($ocLazyLoad) {
+		                return $ocLazyLoad.load({
+		                    name: 'app',
+		                    insertBefore: '#ng_load_before',
+		                    files: [
+		                        $path_root + 'scripts/controllers/Search/controllers.view.js'
+		                    ]
+		                });
+		            }]
+		        }
+		    })
 		    // [查询页]
 		    .state('web.Record', {
 		        url: '/Record.html',
@@ -422,6 +448,108 @@
 		                    insertBefore: '#ng_load_before',
 		                    files: [
 		                        $path_root + 'scripts/controllers/Database/controllers.edit.js'
+		                    ]
+		                });
+		            }]
+		        }
+		    })
+		    // [查询页]
+		    .state('web.System', {
+		        url: '/System.html',
+		        views: {
+		        	'content':{
+		            	templateUrl: $path_root + 'views/System/index.html',
+		            	controller:'System'
+		        	}
+		        },
+		        data: {
+		            pageTitle: '用户设置'
+		        },
+		        resolve: {
+		            deps: ['$ocLazyLoad', function($ocLazyLoad) {
+		                return $ocLazyLoad.load({
+		                    name: 'app',
+		                    insertBefore: '#ng_load_before',
+		                    files: [
+		                        $path_root + 'scripts/controllers/System/controllers.js'
+		                    ]
+		                });
+		            }]
+		        }
+		    })
+		    // []
+		    .state('web.SystemView', {
+		        url: '/System/view.html?id',
+		        views: {
+		        	'content':{
+		            	templateUrl: $path_root + 'views/System/detail.html',
+		            	controller:'SystemView'
+		        	}
+		        },
+		        data: {
+		            pageTitle: '用户设置',
+		            pageTitleSub:'查看',
+		            parentUrl:'#/web/System.html'
+		        },
+		        resolve: {
+		            deps: ['$ocLazyLoad', function($ocLazyLoad) {
+		                return $ocLazyLoad.load({
+		                    name: 'app',
+		                    insertBefore: '#ng_load_before',
+		                    files: [
+		                        $path_root + 'scripts/controllers/System/controllers.view.js'
+		                    ]
+		                });
+		            }]
+		        }
+		    })
+		    // []
+		    .state('web.SystemAdd', {
+		        url: '/System/add.html',
+		        views: {
+		        	'content':{
+		            	templateUrl: $path_root + 'views/System/detail.html',
+		            	controller:'SystemAdd'
+		        	}
+		        },
+		        data: {
+		            pageTitle: '用户设置',
+		            pageTitleSub:'新增',
+		            parentUrl:'#/web/System.html'
+		        },
+		        resolve: {
+		            deps: ['$ocLazyLoad', function($ocLazyLoad) {
+		                return $ocLazyLoad.load({
+		                    name: 'app',
+		                    insertBefore: '#ng_load_before',
+		                    files: [
+		                        $path_root + 'scripts/controllers/System/controllers.add.js'
+		                    ]
+		                });
+		            }]
+		        }
+		    })
+		    // []
+		    .state('web.SystemEdit', {
+		        url: '/System/edit.html?id',
+		        views: {
+		        	'content':{
+		            	templateUrl: $path_root + 'views/System/detail.html',
+		            	controller:'SystemEdit'
+		        	}
+		        },
+		        data: {
+		            pageTitle: '用户设置',
+		            pageTitleSub:'修改',
+		            parentUrl:'#/web/System.html'
+		        },
+		        resolve: {
+		            deps: ['$ocLazyLoad', function($ocLazyLoad) {
+		                return $ocLazyLoad.load({
+		                    name: 'app',
+		                    insertBefore: '#ng_load_before',
+		                    files: [
+		                        $path_root + 'scripts/controllers/System/controllers.edit.js'
 		                    ]
 		                });
 		            }]
