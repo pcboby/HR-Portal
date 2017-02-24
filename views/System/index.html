@@ -111,13 +111,14 @@
                         bs-tooltip>
                         <span class="glyphicon glyphicon-pencil"></span>
                     </button>
-                    <button class="btn btn-default btn-sm"
+                    <button class="btn btn-sm"
+                        ng-class="{'btn-default':!switchs[$index],'btn-warning':switchs[$index]}"
                         ng-click="switchs[$index]=!switchs[$index]"
                         data-trigger="hover"
                         data-type="success"
                         data-title="切换为{{!switchs[$index]?'失效':'有效'}}"
                         bs-tooltip>
-                        <span class="fa" ng-class="{'fa-check-circle text-success':!switchs[$index],'fa-minus-circle text-danger':switchs[$index]}"></span>
+                        <span class="fa" ng-class="{'fa-play':!switchs[$index],'fa-pause':switchs[$index]}"></span>
                     </button>
                 </td>
                 <td data-title="'用户名'" style="text-align: center;" 
@@ -193,13 +194,14 @@
                         bs-tooltip>
                         <span class="glyphicon glyphicon-pencil"></span>
                     </button>
-                    <button class="btn btn-default btn-sm"
-                        ng-click="_switch(data.id);switchs[data.id]=!switchs[data.id]"
+                    <button class="btn btn-sm"
+                        ng-class="{'btn-default':!switchs[$index],'btn-warning':switchs[$index]}"
+                        ng-click="switchs[$index]=!switchs[$index]"
                         data-trigger="hover"
                         data-type="success"
-                        data-title="切换为{{!switchs[data.id]?'失效':'有效'}}"
+                        data-title="切换为{{!switchs[$index]?'失效':'有效'}}"
                         bs-tooltip>
-                        <span class="fa" ng-class="{'fa-check-circle text-success':!switchs[data.id],'fa-minus-circle text-danger':switchs[data.id]}"></span>
+                        <span class="fa" ng-class="{'fa-play':!switchs[$index],'fa-pause':switchs[$index]}"></span>
                     </button>
                 </td>
             </tr>
