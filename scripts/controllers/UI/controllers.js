@@ -1,9 +1,8 @@
 (function() {
     'use strict';
     app
-        .controller('UI', function($scope, $element, $state, $stateParams, NgTableParams, RecordList) {
-
-
+        .controller('UI', function($scope, $element, $state, $stateParams, NgTableParams, RecordList, DataSearch) {
+            
             $scope.dimensions = [{
                 id: 0,
                 name: '沟通方式'
@@ -37,10 +36,12 @@
                 name: '工作地'
             }]
 
-            
-            RecordList.get(function(res){
+
+            DataSearch.query(function(res){
+                $scope.dataSearch = res.rows;
                 console.log(res)
             })
-        })
 
+    })
+        
 })()
