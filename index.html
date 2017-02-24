@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title data-ng-bind="'HR-Portal | ' + $state.current.data.pageTitle"></title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta content="" name="author" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  user-scalable=no" name="viewport" />
+    <!-- app basic style -->
+    <link href="/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/libs/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+    <!-- app style -->
+    <link href="themes/default/css/style.css" rel="stylesheet" />
+    <!-- app on loaded before -->
+    <link id="ng_load_before" />
+</head>
+
+<body class="page-on-load"
+	ng-class="{
+		'page-on-first':$state.includes('web.Dashboard'),
+		'page-on-search':$state.includes('web.Search')
+	}"
+	controller="appController"
+	>
+    <!-- *************************************************************************************** -->
+    <!-- Page Spinner loader -->
+    <!-- *************************************************************************************** -->
+    <spinner>
+        <i></i>
+        <p>正在努力加载,请稍等....</p>
+    </spinner>
+    <!-- *************************************************************************************** -->
+    <!-- Page header -->
+    <!-- *************************************************************************************** -->
+    <header ui-view="header"></header>
+    <div class="clearfix"></div>
+    <!-- *************************************************************************************** -->
+    <!-- Page slider -->
+    <!-- *************************************************************************************** -->
+    <slider ui-view="slider"></slider>
+    <div class="clearfix"></div>
+    <!-- *************************************************************************************** -->
+    <!-- Page wraper -->
+    <!-- *************************************************************************************** -->
+    <wraper ui-view="wraper"></wraper>
+    <div class="clearfix"></div>
+    <!-- *************************************************************************************** -->
+    <!-- Page footer -->
+    <!-- *************************************************************************************** -->
+    <footer ui-view="footer"></footer>
+    <!-- *************************************************************************************** -->
+    <!-- javascript plugins -->
+    <!-- *************************************************************************************** -->
+    <!-- Javascript Basic -->
+    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/libs/angular/angular.min.js"></script>
+    <script src="/libs/angular/i18n/angular-locale_zh-cn.js"></script>
+    <!-- Javascript Plugins -->
+    <script src="/libs/angular/angular-resource.min.js"></script>
+    <script src="/libs/angular/angular-cookies.min.js"></script>
+    <script src="/libs/angular/angular-sanitize.min.js"></script>
+    <script src="/libs/angular/angular-animate.min.js"></script>
+    <script src="/libs/angular-ocLazyLoad/ocLazyLoad.min.js"></script>
+    <script src="/libs/angular-ui-router/angular-ui-router.min.js"></script>
+    <script src="/libs/angular-translate/angular-translate.min.js"></script>
+    <script src="/libs/angular-strap-master/dist/angular-strap.min.js"></script>
+    <script src="/libs/angular-strap-master/dist/angular-strap.tpl.min.js"></script>
+    <script src="/libs/ng-table/dist/ng-table.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/libs/ng-table/dist/ng-table.min.css">
+    <script src="/libs/moment/min/moment.min.js"></script>
+    <script src="/libs/bootbox/bootbox.min.js"></script>
+    <!-- Javascript Utils -->
+    <script src="scripts/common.js"></script>
+    <script src="scripts/utils/layout.js"></script>
+    <script src="scripts/utils/utils.js"></script>
+    <!-- Javascript ng App -->
+    <script src="scripts/app/app.js"></script>
+    <script src="scripts/app/app.config.js"></script>
+    <script src="scripts/app/app.routers.js"></script>
+    <script src="scripts/app/app.filters.js"></script>
+    <script src="scripts/app/app.factorys.js"></script>
+    <script src="scripts/app/app.directives.js"></script>
+    <script src="scripts/app/app.resources.js"></script>
+</body>
+
+</html>

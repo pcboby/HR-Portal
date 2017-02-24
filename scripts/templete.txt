@@ -1,0 +1,57 @@
+<button type="button"
+    class="btn btn-default"
+    ng-model="$model"
+    placeholder="{{placeholder}}"
+    data-max-length="{{maxLength}}"
+    data-all-none-buttons="{{allButtons}}"
+    data-max-length-html="{{selectedText}}"
+    bs-options="{{bsOptions}}"
+    data-html="1"
+    data-multiple="1"
+    data-container="body"
+    data-template-url="comboboxs.html"
+    bs-select/>
+
+<button type="button"
+    class="btn btn-default"
+    ng-model="$model"
+    placeholder="{{placeholder}}"
+    data-max-length="{{maxLength}}"
+    data-all-none-buttons="{{allButtons}}"
+    data-max-length-html="{{selectedText}}"
+    bs-options="{{bsOptions}}"
+    data-html="1"
+    data-multiple="1"
+    data-container="body"
+    data-template-url="comboboxs.html"
+    bs-select>
+    Action <span class="caret"></span>
+</button>
+
+
+
+    .directive('ngComboSelect', function () {
+        return {
+            restrict: 'AEC',
+            templateUrl:'tpls/model.comboselect.html',
+            scope:{
+                $model:'=ngModel',
+                $data:'=ngData',
+                bsOptions:'@options',
+                maxLength:'@',
+                placeholder:'@',
+                allButtons:'@',
+                selectedText:'@'
+            },
+            controller:function($scope,$element){
+                $scope.$watch(function(){
+                    return $scope.$model
+                }, function(value){
+                    angular.element($element[0].getElementsByClassName("select-all")).prop("indeterminate", ($scope.$model.length != 0 && $scope.$model.length!=$scope.$data.length));
+                })
+            },
+            link: function (scope, iElement, iAttrs) {
+                scope.$model= scope.$model || []
+            }
+        };
+    })
