@@ -8,10 +8,10 @@
             	'label':'全部'
             },{
             	'value':'1',
-            	'label':'进行中'
+            	'label':'有效'
             },{
             	'value':'0',
-            	'label':'已关闭'
+            	'label':'失效'
             }];
 
             $scope.forms={

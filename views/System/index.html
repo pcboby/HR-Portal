@@ -1,14 +1,14 @@
 <form class="form-horizontal form-horizontal-box">
     <div class="form-group col-md-8">
-        <label class="col-md-2 control-label">关键字</label>
+        <label class="col-md-2 control-label">工号／姓名</label>
         <div class="input-group col-md-8">
             <input type="text" class="form-control"
-                placeholder="请输入您要搜索的关键字"
+                placeholder="请输入您要搜索的工号／姓名"
                 ng-model="forms.key">
         </div>
     </div>
     <div class="form-group col-md-4">
-        <label class="col-md-3 control-label">状态</label>
+        <label class="col-md-3 control-label">用户状态</label>
         <button type="button" class="btn btn-default"
             ng-model="forms.state"
             data-html="1"
@@ -83,17 +83,6 @@
     </div>
     <div class="east">
         <!--  -->
-        <table class="table table-striped table-hover"
-            ng-table="tableParams"
-            show-filter="false">
-            <tr ng-repeat="data in $data">
-                <td data-title="'受理人'" style="text-align: center;" 
-                    filter="{ label_4: 'text'}"
-                    sortable="'label_4'">
-                    <span ng-bind="data.label_4"></span>
-                </td>
-            </tr>
-        </table>
         <!--  -->
     </div>
     <div class="center table-responsive">
@@ -102,13 +91,10 @@
             ng-table="tableParams"
             show-filter="false">
             <tr ng-repeat="data in $data">
-                <td header="'headerCheckbox.html'">
-                    <span><input type="checkbox" ng-model="checkboxes.items[data.id]" /></span>
-                </td>
-                <td data-title="'序号'" style="text-align: center;">
+                <td data-title="'序号'" style="text-align: center; width: 44px;">
                     <span ng-bind="(params.page()-1)*params.count()+$index+1"></span>
                 </td>
-                <td data-title="'操作'">
+                <td data-title="'操作'" style="width: 125px;">
                     <button class="btn btn-default btn-sm"
                         ng-click="_view(data.id)"
                         data-trigger="hover"
@@ -125,64 +111,46 @@
                         bs-tooltip>
                         <span class="glyphicon glyphicon-pencil"></span>
                     </button>
-                    <button class="btn btn-danger btn-sm"
-                        ng-click="_del(data.id)"
+                    <button class="btn btn-default btn-sm"
+                        ng-click="switchs[$index]=!switchs[$index]"
                         data-trigger="hover"
                         data-type="success"
-                        data-title="删除"
+                        data-title="切换为{{!switchs[$index]?'失效':'有效'}}"
                         bs-tooltip>
-                        <span class="glyphicon glyphicon-trash"></span>
+                        <span class="fa" ng-class="{'fa-check-circle text-success':!switchs[$index],'fa-minus-circle text-danger':switchs[$index]}"></span>
                     </button>
                 </td>
-                <td data-title="'需求人姓名'" style="text-align: center;" 
+                <td data-title="'用户名'" style="text-align: center;" 
                     filter="{ label_1: 'text'}"
                     sortable="'label_1'">
                     <span ng-bind="data.label_1"></span>
                 </td>
-                <td data-title="'需求人工号'" style="text-align: center;" 
+                <td data-title="'用户状态'" style="text-align: center;" 
                     filter="{ label_2: 'text'}"
                     sortable="'label_2'">
-                    <span ng-bind="data.label_2"></span>
+                    <i class="fa" ng-class="{'fa-check-circle text-success':!switchs[$index],'fa-minus-circle text-danger':switchs[$index]}"></i>
+                    <span ng-bind="switchs[$index]?'失效':'有效'"></span>
+                    <!-- <span ng-bind="data.label_2"></span> -->
                 </td>
-                <td data-title="'需求提出日期'" style="text-align: center;" 
-                    filter="{ label_3: 'text'}"
-                    sortable="'label_3'">
-                    <span ng-bind="data.label_3"></span>
-                </td>
-                <td data-title="'问题类型'" style="text-align: center;" 
+                <td data-title="'创建人'" style="text-align: center;" 
                     filter="{ label_5: 'text'}"
                     sortable="'label_5'">
                     <span ng-bind="data.label_5"></span>
                 </td>
-                <td data-title="'问题描述'" style="text-align: center;" 
-                    filter="{ label_6: 'text'}"
-                    sortable="'label_6'">
-                    <span ng-bind="data.label_6"></span>
+                <td data-title="'创建日期'" style="text-align: center;" 
+                    filter="{ label_3: 'text'}"
+                    sortable="'label_3'">
+                    <span ng-bind="data.label_3"></span>
                 </td>
-                <td data-title="'相关协助部门'"
-                    filter="{ label_7: 'text'}"
-                    sortable="'label_7'">
-                    <span ng-bind="data.label_7"></span>
+                <td data-title="'更新人'" style="text-align: center;" 
+                    filter="{ label_1: 'text'}"
+                    sortable="'label_1'">
+                    <span ng-bind="data.label_1"></span>
                 </td>
-                <td data-title="'问题进度'" style="text-align: center;" 
-                    filter="{ label_8: 'text'}"
-                    sortable="'label_8'">
-                    <ng-progress data-value-now="80"/>
-                </td>
-                <td data-title="'是否关闭'" style="text-align: center;" 
-                    filter="{ label_9: 'text'}"
-                    sortable="'label_9'">
-                    <span ng-bind="data.label_9"></span>
-                </td>
-                <td data-title="'备注'" style="text-align: center;" 
-                    filter="{ label_10: 'text'}"
-                    sortable="'label_10'">
-                    <span ng-bind="data.label_10"></span>
-                </td>
-                <td data-title="'受理人'" style="text-align: center;" 
-                    filter="{ label_4: 'text'}"
-                    sortable="'label_4'">
-                    <span ng-bind="data.label_4"></span>
+                <td data-title="'更新日期'" style="text-align: center;" 
+                    filter="{ label_3: 'text'}"
+                    sortable="'label_3'">
+                    <span ng-bind="data.label_3"></span>
                 </td>
             </tr>
         </table>
@@ -205,13 +173,10 @@
             ng-table="tableParams"
             show-filter="false">
             <tr ng-repeat="data in $data">
-                <td header="'headerCheckbox.html'">
-                    <span><input type="checkbox" ng-model="checkboxes.items[data.id]" /></span>
-                </td>
-                <td data-title="'序号'" style="text-align: center;">
+                <td data-title="'序号'" style="text-align: center; width: 44px;">
                     <span ng-bind="(params.page()-1)*params.count()+$index+1"></span>
                 </td>
-                <td data-title="'操作'">
+                <td data-title="'操作'" style="width: 125px;">
                     <button class="btn btn-default btn-sm"
                         ng-click="_view(data.id)"
                         data-trigger="hover"
@@ -228,13 +193,13 @@
                         bs-tooltip>
                         <span class="glyphicon glyphicon-pencil"></span>
                     </button>
-                    <button class="btn btn-danger btn-sm"
-                        ng-click="_del(data.id)"
+                    <button class="btn btn-default btn-sm"
+                        ng-click="_switch(data.id);switchs[data.id]=!switchs[data.id]"
                         data-trigger="hover"
                         data-type="success"
-                        data-title="删除"
+                        data-title="切换为{{!switchs[data.id]?'失效':'有效'}}"
                         bs-tooltip>
-                        <span class="glyphicon glyphicon-trash"></span>
+                        <span class="fa" ng-class="{'fa-check-circle text-success':!switchs[data.id],'fa-minus-circle text-danger':switchs[data.id]}"></span>
                     </button>
                 </td>
             </tr>
@@ -242,6 +207,3 @@
         <!--  -->
     </div>
 </div>
-<script type="text/ng-template" id="headerCheckbox.html">
-    <input type="checkbox" ng-model="checkboxes.checked" class="select-all" value="" />
-</script>
