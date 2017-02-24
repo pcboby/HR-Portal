@@ -125,7 +125,7 @@
             replace:true,
             controller:function($scope,$element){
                 $scope.build=build;
-                
+
                 function build(){
 
                     $element.css({
@@ -197,6 +197,43 @@
             controller:function($scope){},
             link: function (scope, iElement, iAttrs) {
                 
+            }
+        };
+    }])
+    .directive('ngComboKindeditor', [function () {
+        return {
+            restrict: 'AEC',
+            template:'<textarea class="form-control" placeholder="{{placeholder}}"></textarea>',
+            replace:true,
+            scope:{
+                $model:'=ngModel',
+                name:'@',
+                placeholder:'@'
+            },
+            controller:function($scope,$element,$document){
+                $scope.defaults={
+                    width:'100%',
+                    height:240,
+                    resizeMode:0,
+                    allowFileManager : true,
+                    resizeType : 0,
+                    allowPreviewEmoticons : false,
+                    allowImageUpload : false,
+                    items : [
+                        'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                        'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                        'insertunorderedlist', '|', 'emoticons', 'image', 'link','|','fullscreen']
+                }
+                $scope.build=build;
+                var editor
+                function build(){
+                    var editor = KindEditor.create($element[0], angular.extend({
+
+                    }, $scope.defaults,parseObj($scope.options)));
+                }
+            },
+            link: function (scope, iElement, iAttrs) {
+                scope.build();
             }
         };
     }])
