@@ -36,5 +36,11 @@
                 id: 9,
                 name: '工作地'
             }]
+
+            
+            RecordList.get(function(res){
+                console.log(res)
+            })
         })
+
 })()
