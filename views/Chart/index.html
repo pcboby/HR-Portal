@@ -76,7 +76,8 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <span>沟通方式（按人次统计）</span>
-                <div ng-init="tabs.activeTab_0='chart'" class="btn-group pull-right" ng-model="tabs.activeTab" bs-radio-group>
+                <div ng-init="tabs.activeTab_0='chart'" class="btn-group pull-right"
+                    ng-model="tabs.activeTab_0" bs-radio-group>
                     <label class="btn btn-default btn-sm">
                         <input type="radio" class="btn btn-default" value="chart">
                         <i class="fa fa-image"></i>
@@ -89,9 +90,29 @@
             </div>
             <div class="panel-body">
                 <!--  -->
-                <div class="col-md-4">
+                <div class="col-sm-4">
+                    <ng-chart-flot data-width="135" height="135"
+                        ng-data="data_flot"
+                        data-options="{
+                            series: {
+                                pie: { 
+                                    innerRadius: 0.615,
+                                    show: true,
+                                    label: {
+                                        show: false
+                                    }
+                                }
+                            },
+                            legend:{
+                                show:false
+                            },
+                            grid: {
+                                hoverable: true,
+                                clickable: true
+                            }
+                        }"/>
                 </div>
-                <div class="col-md-8 dashboard-stat2">
+                <div class="col-sm-8 dashboard-stat2">
                     <div class="display">
                         <div class="number">
                             <h3 class="font-green-sharp">31 / 175</h3>
@@ -125,7 +146,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <span>沟通方式（按人数统计）</span>
-                <div ng-init="tabs.activeTab_0='chart'" class="btn-group pull-right" ng-model="tabs.activeTab" bs-radio-group>
+                <div ng-init="tabs.activeTab_1='chart'" class="btn-group pull-right" ng-model="tabs.activeTab_1" bs-radio-group>
                     <label class="btn btn-default btn-sm">
                         <input type="radio" class="btn btn-default" value="chart">
                         <i class="fa fa-image"></i>
@@ -138,8 +159,29 @@
             </div>
             <div class="panel-body">
                 <!--  -->
-                <div class="col-md-4"></div>
-                <div class="col-md-8 dashboard-stat2">
+                <div class="col-sm-4">
+                    <ng-chart-flot data-width="135" height="135"
+                        ng-data="data_flot"
+                        data-options="{
+                            series: {
+                                pie: { 
+                                    innerRadius: 0.615,
+                                    show: true,
+                                    label: {
+                                        show: false
+                                    }
+                                }
+                            },
+                            legend:{
+                                show:false
+                            },
+                            grid: {
+                                hoverable: true,
+                                clickable: true
+                            }
+                        }"/>
+                </div>
+                <div class="col-sm-8 dashboard-stat2">
                     <div class="display">
                         <div class="number">
                             <h3 class="font-red-haze">75 / 11,371</h3>
@@ -185,7 +227,22 @@
                 </div>
             </div>
             <div class="panel-body">
-                Panel content
+                <ng-chart-flot data-width="100%" height="320"
+                    ng-data="data_flot1"
+                    data-options="{
+                        series: {
+                            lines: {
+                                show: true
+                            }
+                        },
+                        crosshair: {
+                            mode: 'x'
+                        },
+                        grid: {
+                            hoverable: true,
+                            autoHighlight: false
+                        }
+                    }"/>
             </div>
         </div>
     </div>
@@ -205,7 +262,21 @@
                 </div>
             </div>
             <div class="panel-body">
-                Panel content
+                <ng-chart-flot data-width="100%" height="320"
+                    ng-data="data_flot2"
+                    data-options="{
+                        series: {
+                            bars: {
+                                show: true,
+                                barWidth: 0.315,
+                                align: 'center'
+                            }
+                        },
+                        xaxis: {
+                            mode: 'categories',
+                            tickLength: 0
+                        }
+                    }"/>
             </div>
         </div>
     </div>
@@ -225,7 +296,30 @@
                 </div>
             </div>
             <div class="panel-body">
-                Panel content
+                <ng-chart-flot id="placeholder" data-width="100%" height="320"
+                    ng-data="data_flot3"
+                    data-options="{
+                        series: {
+                            lines: {
+                                show: true
+                            },
+                            points: {
+                                show: true
+                            }
+                        },
+                        legend: {
+                            noColumns: 2
+                        },
+                        xaxis: {
+                            tickDecimals: 0
+                        },
+                        yaxis: {
+                            min: 0
+                        },
+                        selection: {
+                            mode: 'x'
+                        }
+                    }"/>
             </div>
         </div>
     </div>
@@ -245,7 +339,21 @@
                 </div>
             </div>
             <div class="panel-body">
-                Panel content
+                <ng-chart-flot data-width="100%" height="320"
+                    ng-data="data_flot2"
+                    data-options="{
+                        series: {
+                            bars: {
+                                show: true,
+                                barWidth: 0.315,
+                                align: 'center'
+                            }
+                        },
+                        xaxis: {
+                            mode: 'categories',
+                            tickLength: 0
+                        }
+                    }"/>
             </div>
         </div>
     </div>
@@ -265,7 +373,21 @@
                 </div>
             </div>
             <div class="panel-body">
-                Panel content
+                <ng-chart-flot data-width="100%" height="320"
+                    ng-data="data_flot2"
+                    data-options="{
+                        series: {
+                            bars: {
+                                show: true,
+                                barWidth: 0.315,
+                                align: 'center'
+                            }
+                        },
+                        xaxis: {
+                            mode: 'categories',
+                            tickLength: 0
+                        }
+                    }"/>
             </div>
         </div>
     </div>
@@ -285,7 +407,21 @@
                 </div>
             </div>
             <div class="panel-body">
-                Panel content
+                <ng-chart-flot data-width="100%" height="320"
+                    ng-data="data_flot2"
+                    data-options="{
+                        series: {
+                            bars: {
+                                show: true,
+                                barWidth: 0.315,
+                                align: 'center'
+                            }
+                        },
+                        xaxis: {
+                            mode: 'categories',
+                            tickLength: 0
+                        }
+                    }"/>
             </div>
         </div>
     </div>
@@ -305,7 +441,21 @@
                 </div>
             </div>
             <div class="panel-body">
-                Panel content
+                <ng-chart-flot data-width="100%" height="320"
+                    ng-data="data_flot2"
+                    data-options="{
+                        series: {
+                            bars: {
+                                show: true,
+                                barWidth: 0.315,
+                                align: 'center'
+                            }
+                        },
+                        xaxis: {
+                            mode: 'categories',
+                            tickLength: 0
+                        }
+                    }"/>
             </div>
         </div>
     </div>
@@ -325,7 +475,21 @@
                 </div>
             </div>
             <div class="panel-body">
-                Panel content
+                <ng-chart-flot data-width="100%" height="320"
+                    ng-data="data_flot2"
+                    data-options="{
+                        series: {
+                            bars: {
+                                show: true,
+                                barWidth: 0.315,
+                                align: 'center'
+                            }
+                        },
+                        xaxis: {
+                            mode: 'categories',
+                            tickLength: 0
+                        }
+                    }"/>
             </div>
         </div>
     </div>
@@ -345,7 +509,21 @@
                 </div>
             </div>
             <div class="panel-body">
-                Panel content
+                <ng-chart-flot data-width="100%" height="320"
+                    ng-data="data_flot2"
+                    data-options="{
+                        series: {
+                            bars: {
+                                show: true,
+                                barWidth: 0.315,
+                                align: 'center'
+                            }
+                        },
+                        xaxis: {
+                            mode: 'categories',
+                            tickLength: 0
+                        }
+                    }"/>
             </div>
         </div>
     </div>
