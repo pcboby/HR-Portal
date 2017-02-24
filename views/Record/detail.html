@@ -74,7 +74,13 @@
 	            <div class="form-group col-md-12">
 			        <label class="col-md-2 control-label">访谈原始记录</label>
 			        <div class="input-group col-md-10">
-			        	<textarea class="form-control"></textarea>
+			        	<ng-combo-kindeditor
+			        		name="rems"
+			        		ng-model="forms.rem"
+			        		placeholder="请输入访谈内容"
+			        		height="320"
+			        		width="100%"/>
+			        {{forms.rem}}
 			        </div>
 			    </div>
 	        </div>
