@@ -112,6 +112,37 @@
             }
         };
     })
+    .directive('ngChartFlot', function () {
+        return {
+            restrict: 'AEC',
+            template:'<div class="chart chart-flot"></div>',
+            scope:{
+                $data:'=ngData',
+                width:'@',
+                height:'@',
+                options:'@'
+            },
+            replace:true,
+            controller:function($scope,$element){
+                $scope.build=build;
+                
+                function build(){
+
+                    $element.css({
+                        width:$scope.width,
+                        height:$scope.height
+                    });
+
+                    $.plot($element, $scope.$data, $scope.opts);
+                }
+            },
+            link: function (scope, iElement, iAttrs) {
+                var options_default={};
+                scope.opts=angular.extend({}, parseObj(scope.options)||{},true);
+                scope.build();
+            }
+        };
+    })
     .directive('ngSearch', ['$location','$state',function ($location,$state) {
         return {
             restrict: 'AEC',
