@@ -50,7 +50,8 @@
                 scope: {
                     valueNow: '@',
                     valueMin: '@',
-                    valueMax: '@'
+                    valueMax: '@',
+                    barStyle:'@'
                 },
                 replace: true,
                 controller: function($scope) {},
