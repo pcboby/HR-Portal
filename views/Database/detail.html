@@ -23,25 +23,27 @@
                 <div class="form-group col-md-6">
                     <label class="col-md-4 control-label">工号</label>
                     <div class="input-group col-md-8">
-                        <input type="text" class="form-control" disabled 
+                        <input type="text" class="form-control" disabled
                             placeholder="员工工号"
                             ng-model="forms.userName">
                     </div>
                 </div>
                 <div class="form-group col-md-6">
                     <label class="col-md-4 control-label">类型</label>
-                    <button type="button" class="btn btn-default"
-                        ng-model="forms.state"
-                        data-html="1"
-                        data-toggle="true"
-                        bs-options="state.value as state.label for state in states"
-                        bs-select>
-                        Action <span class="caret"></span>
-                    </button>
+                    <div class="col-md-8">
+                      <button type="button" class="btn btn-default btn-block"
+                          ng-model="forms.state"
+                          data-html="1"
+                          data-toggle="true"
+                          bs-options="state.value as state.label for state in states"
+                          bs-select>
+                          Action <span class="caret"></span>
+                      </button>
+                    </div>
                 </div>
                 <div class="form-group col-md-6">
                     <label class="col-md-4 control-label">个人职级</label>
-                    <div class="input-group col-md-8">
+                    <div class="col-md-8">
                         <input type="text" class="form-control"
                             placeholder="职级名称/代码"
                             ng-model="forms.userName">
@@ -49,7 +51,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label class="col-md-4 control-label">任命岗位</label>
-                    <div class="input-group col-md-8">
+                    <div class="col-md-8">
                         <input type="text" class="form-control"
                             placeholder="岗位名称/代码"
                             ng-model="forms.userName">
@@ -176,10 +178,107 @@
                                         ng-model="forms.userName">
                                 </div>
                             </td>
-                            <td width="160">
+                            <td>
                                 <div class="input-group col-md-12">
                                     <input type="text" class="form-control"
-                                        placeholder="keyType"
+                                        placeholder="keyValue"
+                                        ng-model="forms.userName">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="34">
+                                <div class="btn-group">
+                                    <button class="btn btn-danger btn-sm"
+                                        data-type="success"
+                                        data-title="删除"
+                                        bs-tooltip>
+                                        <i class="glyphicon glyphicon-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                            <td width="220">
+                                <div class="input-group col-md-12">
+                                    <input type="text" class="form-control"
+                                        placeholder="keyName"
+                                        ng-model="forms.userName">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group col-md-12">
+                                    <input type="text" class="form-control"
+                                        placeholder="keyValue"
+                                        ng-model="forms.userName">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="34">
+                                <div class="btn-group">
+                                    <button class="btn btn-danger btn-sm"
+                                        data-type="success"
+                                        data-title="删除"
+                                        bs-tooltip>
+                                        <i class="glyphicon glyphicon-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                            <td width="220">
+                                <div class="input-group col-md-12">
+                                    <input type="text" class="form-control"
+                                        placeholder="keyName"
+                                        ng-model="forms.userName">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group col-md-12">
+                                    <input type="text" class="form-control"
+                                        placeholder="keyValue"
+                                        ng-model="forms.userName">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="34">
+                                <div class="btn-group">
+                                    <button class="btn btn-danger btn-sm"
+                                        data-type="success"
+                                        data-title="删除"
+                                        bs-tooltip>
+                                        <i class="glyphicon glyphicon-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                            <td width="220">
+                                <div class="input-group col-md-12">
+                                    <input type="text" class="form-control"
+                                        placeholder="keyName"
+                                        ng-model="forms.userName">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group col-md-12">
+                                    <input type="text" class="form-control"
+                                        placeholder="keyValue"
+                                        ng-model="forms.userName">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="34">
+                                <div class="btn-group">
+                                    <button class="btn btn-danger btn-sm"
+                                        data-type="success"
+                                        data-title="删除"
+                                        bs-tooltip>
+                                        <i class="glyphicon glyphicon-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                            <td width="220">
+                                <div class="input-group col-md-12">
+                                    <input type="text" class="form-control"
+                                        placeholder="keyName"
                                         ng-model="forms.userName">
                                 </div>
                             </td>
