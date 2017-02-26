@@ -9,13 +9,15 @@
 	.filter('sex', function ($sce) {
 		return function (val) {
 			var styles=[{//女
+					text:'女',
 					cls:'icon icon-user-female',
 					color:'#ec971f'
 				},{//男
+					text:'男',
 					cls:'icon icon-user',
 					color:'#5cb85c'
 				}]
-			return $sce.trustAsHtml('<i class="'+styles[val].cls+'" style="color:'+styles[val].color+';"></i>')
+			return $sce.trustAsHtml('<i class="'+styles[val].cls+'" style="color:'+styles[val].color+';">'+styles[val].text+'</i>')
 		};
 	})
 	.filter('state', function ($sce) {
