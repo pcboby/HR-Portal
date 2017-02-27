@@ -8,6 +8,20 @@
 	        <div class="form-horizontal">
 	        	<div class="form-horizontal-header" ng-page-label>
 	        		<i class="fa fa-bookmark"></i><span>事项信息</span>
+                    <div class="btn-group pull-right">
+                        <a class="btn btn-link" data-trigger="hover" data-type="success" data-title="编辑" ng-click="setViewModel(true)" bs-tooltip>
+                            <i class="glyphicon glyphicon-edit"></i>
+                            <span>编辑</span>
+                        </a>
+                        <a class="btn btn-link" data-trigger="hover" data-type="success" data-title="保存" ng-click="setViewModel(false)" bs-tooltip>
+                            <i class="glyphicon glyphicon-floppy-saved"></i>
+                            <span>保存</span>
+                        </a>
+                        <a class="btn btn-link" data-type="success" data-title="还原" bs-tooltip>
+                            <i class="glyphicon glyphicon-share"></i>
+                            <span>还原</span>
+                        </a>
+                    </div>
 	        	</div>
 	            <div class="form-group col-md-6">
 			        <label class="col-md-4 control-label">需求提出人</label>
@@ -66,6 +80,20 @@
 	        <div class="form-horizontal">
 	        	<div class="form-horizontal-header" ng-page-label>
 	        		<i class="fa fa-bookmark"></i><span>受理信息</span>
+                    <div class="btn-group pull-right">
+                        <a class="btn btn-link" data-trigger="hover" data-type="success" data-title="编辑" ng-click="setViewModel(true)" bs-tooltip>
+                            <i class="glyphicon glyphicon-edit"></i>
+                            <span>编辑</span>
+                        </a>
+                        <a class="btn btn-link" data-trigger="hover" data-type="success" data-title="保存" ng-click="setViewModel(false)" bs-tooltip>
+                            <i class="glyphicon glyphicon-floppy-saved"></i>
+                            <span>保存</span>
+                        </a>
+                        <a class="btn btn-link" data-type="success" data-title="还原" bs-tooltip>
+                            <i class="glyphicon glyphicon-share"></i>
+                            <span>还原</span>
+                        </a>
+                    </div>
 	        	</div>
 	            <div class="form-group col-md-6">
 			        <label class="col-md-4 control-label">受理人</label>
@@ -110,7 +138,7 @@
 			    </div>
 	        </div>
             <div style="margin: 20px 0px;">
-                <button type="submit" class="btn btn-success">提交</button>
+                <button type="submit" class="btn btn-success">全部提交</button>
                 <button type="reset" class="btn btn-default">重置</button>
             </div>
     	</form>
