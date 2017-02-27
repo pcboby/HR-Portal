@@ -5,10 +5,10 @@
 
 
             $scope.forms = {
-                user:'',
-                department:'',
-                dateEntryFrom:'',
-                dateEntryUntil:''
+                userName:$stateParams.userName||'',
+                department:$stateParams.department||'',
+                dateEntryFrom:$stateParams.dateEntryFrom||'',
+                dateEntryUntil:$stateParams.dateEntryUntil||''
             }
 
             $scope.data = [];
@@ -74,7 +74,9 @@
             RecordList.get(function(res){console.log(res)})
 
             function _search(){
-            	console.log('_search');
+            	console.log('_search',$scope.forms);
+                $state.go('web.Record',$scope.forms)
+
             }
             function _refresh(){
             	console.log('_refresh');
@@ -82,7 +84,10 @@
             }
             function _reset(){
             	console.log('_reset');
-            	$scope.tableParams.sorting({}).filter({}).pages(1);
+            	// $scope.tableParams.sorting({}).filter({}).pages(1);
+                for(var e in $scope.forms){
+                    $scope.forms[e]='';
+                }
             }
             function _view(id){
                 console.log('_view');

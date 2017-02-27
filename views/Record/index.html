@@ -7,7 +7,7 @@
             </span>
             <input type="text" class="form-control"
                 placeholder="员工姓名/工号"
-                ng-model="forms.user">
+                ng-model="forms.userName">
         </div>
     </div>
     <div class="form-group col-md-4">
@@ -33,7 +33,7 @@
                 data-date-format="yyyy-MM-dd"
                 data-container="body"
                 data-max-date="{{forms.dateEntryUntil}}"
-                ng-model="dateEntryFrom"
+                ng-model="forms.dateEntryFrom"
                 bs-datepicker>
             <span class="input-group-addon">至</span>
             <input type="text" class="form-control"
@@ -43,14 +43,14 @@
                 data-date-format="yyyy-MM-dd"
                 data-container="body"
                 data-min-date="{{forms.dateEntryFrom}}"
-                ng-model="dateEntryUntil"
+                ng-model="forms.dateEntryUntil"
                 placement="right"
                 bs-datepicker>
         </div>
     </div>
     <div class="col-md-12" style="text-align: center;">
-        <button type="submit" class="btn btn-success">搜索</button>
-        <button type="reset" class="btn btn-default">重置</button>
+        <button type="submit" class="btn btn-success" ng-click="_search()">搜索</button>
+        <button type="reset" class="btn btn-default" ng-click="_reset()">重置</button>
     </div>
 </form>
 <div class="clearfix"></div>
@@ -146,14 +146,6 @@
                         data-title="查看"
                         bs-tooltip>
                         <span class="glyphicon glyphicon-list-alt"></span>
-                    </button>
-                    <button class="btn btn-default btn-sm"
-                        ng-click="_edit(data.id)"
-                        data-trigger="hover"
-                        data-type="success"
-                        data-title="修改"
-                        bs-tooltip>
-                        <span class="glyphicon glyphicon-pencil"></span>
                     </button>
                     <button class="btn btn-danger btn-sm"
                         ng-click="_del(data.id)"
@@ -264,14 +256,6 @@
                         data-title="查看"
                         bs-tooltip>
                         <span class="glyphicon glyphicon-list-alt"></span>
-                    </button>
-                    <button class="btn btn-default btn-sm"
-                        ng-click="_edit(data.id)"
-                        data-trigger="hover"
-                        data-type="success"
-                        data-title="修改"
-                        bs-tooltip>
-                        <span class="glyphicon glyphicon-pencil"></span>
                     </button>
                     <button class="btn btn-danger btn-sm"
                         ng-click="_del(data.id)"

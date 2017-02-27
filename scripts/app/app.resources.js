@@ -36,6 +36,16 @@
 	        },
 	        get: {
 	            method: 'GET'
+	            
+	        },
+	        post:{
+	        	method:'POST'
+	        },
+	        put:{
+	        	method:'PUT'
+	        },
+	        del:{
+	        	method:'DELETE'
 	        }
 	    });
 	})
