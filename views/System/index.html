@@ -64,17 +64,17 @@
             ng-table="tableParams"
             show-filter="false">
             <tr ng-repeat="data in $data">
-                <td data-title="'序号'" style="text-align: center; width: 44px;">
+                <td data-title="'序号'" style="text-align: center;">
                     <span ng-bind="(params.page()-1)*params.count()+$index+1"></span>
                 </td>
-                <td data-title="'操作'" style="width: 86px;">
+                <td data-title="'操作'">
                     <button class="btn btn-default btn-sm"
-                        ng-click="_edit(data.id)"
+                        ng-click="_view(data.id)"
                         data-trigger="hover"
                         data-type="success"
-                        data-title="修改"
+                        data-title="查看"
                         bs-tooltip>
-                        <span class="glyphicon glyphicon-pencil"></span>
+                        <span class="glyphicon glyphicon-list-alt"></span>
                     </button>
                     <button class="btn btn-sm"
                         ng-class="{'btn-default':!switchs[$index],'btn-warning':switchs[$index]}"
@@ -139,17 +139,17 @@
             ng-table="tableParams"
             show-filter="false">
             <tr ng-repeat="data in $data">
-                <td data-title="'序号'" style="text-align: center; width: 44px;">
+                <td data-title="'序号'" style="text-align: center;">
                     <span ng-bind="(params.page()-1)*params.count()+$index+1"></span>
                 </td>
-                <td data-title="'操作'" style="width: 86px;">
+                <td data-title="'操作'">
                     <button class="btn btn-default btn-sm"
-                        ng-click="_edit(data.id)"
+                        ng-click="_view(data.id)"
                         data-trigger="hover"
                         data-type="success"
-                        data-title="修改"
+                        data-title="查看"
                         bs-tooltip>
-                        <span class="glyphicon glyphicon-pencil"></span>
+                        <span class="glyphicon glyphicon-list-alt"></span>
                     </button>
                     <button class="btn btn-sm"
                         ng-class="{'btn-default':!switchs[$index],'btn-warning':switchs[$index]}"
