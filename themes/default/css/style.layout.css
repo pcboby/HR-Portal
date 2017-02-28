@@ -23,7 +23,7 @@ body.page-on-first slider{
 	height: 48%;
 	overflow: hidden;
 	background-color: #333;
-	min-height: 256px;
+	min-height: 264px;
 }
 body.page-on-first slider .search{
 	position: absolute;
