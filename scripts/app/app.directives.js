@@ -405,4 +405,32 @@
                 }
             }
         })
+        .directive('ngViewBlock', function(){
+            // Runs during compile
+            return {
+                restrict: 'AEC', // E = Element, A = Attribute, C = Class, M = Comment
+                // name: '',
+                // priority: 1,
+                // terminal: true,
+                scope: {
+                    $viewType:'=ngViewType'//ngViewType= 'EDIT'||'VIEW'
+                }, // {} = isolate, true = child, false/undefined = no change
+                // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
+                // template: '',
+                // templateUrl: '',
+                // replace: true,
+                // transclude: true,
+                // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
+                controller: function($scope, $element, $attrs) {
+                    console.log($scope.$viewType);
+                    $scope.setter=setter;
+                    function setter(str){
+                        console.log(str)
+                    }
+                },
+                link: function(scope, iElm, iAttrs) {
+                    scope.$viewType=!!scope.$viewType?scope.$viewType:'VIEW'
+                }
+            };
+        });
 })()
